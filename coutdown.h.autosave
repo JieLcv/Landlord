@@ -1,0 +1,26 @@
+#ifndef COUTDOWN_H
+#define COUTDOWN_H
+
+#include <QWidget>
+#include <QTimer>
+
+class CoutDown : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit CoutDown(QWidget *parent = 0);
+    void showCountDown();
+protected:
+    void paintEvent(QPaintEvent *ev);
+private:
+    QPixmap m_clock;
+    QPixmap m_number;
+    QTimer *m_timer;
+    int m_count;
+signals:
+    void notMuchTime();
+
+public slots:
+};
+
+#endif // COUTDOWN_H
